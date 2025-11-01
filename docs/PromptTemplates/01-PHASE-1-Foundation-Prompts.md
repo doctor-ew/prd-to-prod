@@ -182,9 +182,9 @@ I need you to use the MAP framework to generate comprehensive acceptance criteri
 
 Generate an `acceptance_criteria.md` file with these sections:
 
-## 1. Epic MS-01: Project Setup & Core Features
+## 1. Organism MS-01: Project Setup & Core Features
 
-### Story MS-01.01: Project Initialization
+### Molecule MS-01.01: Project Initialization
 **Given** a new GitHub Codespace is launched
 **When** the environment loads
 **Then**:
@@ -193,7 +193,7 @@ Generate an `acceptance_criteria.md` file with these sections:
 - [ ] `pnpm dev` starts the application without errors
 - [ ] The Next.js welcome page loads in under 3 seconds
 
-### Story MS-01.02: Google Maps Integration
+### Molecule MS-01.02: Google Maps Integration
 **Given** the application is running
 **When** a user opens the homepage
 **Then**:
@@ -203,7 +203,7 @@ Generate an `acceptance_criteria.md` file with these sections:
 - [ ] No errors appear in the browser console
 - [ ] Map loads in under 3 seconds
 
-### Story MS-01.03: MARTA API Integration
+### Molecule MS-01.03: MARTA API Integration
 **Given** the application is running in Codespaces
 **When** the `/api/transit` endpoint is called
 **Then**:
@@ -219,7 +219,7 @@ Generate an `acceptance_criteria.md` file with these sections:
 - [ ] Direct connection is used (not proxy)
 - [ ] Console logs show "Direct connection" message
 
-### Story MS-01.04: Display Mock Schedule
+### Molecule MS-01.04: Display Mock Schedule
 **Given** the database has seed data
 **When** a user views the event list
 **Then**:
@@ -228,9 +228,9 @@ Generate an `acceptance_criteria.md` file with these sections:
 - [ ] Clicking an event centers the map on that venue
 - [ ] Events are sorted by date/time
 
-## 2. Epic MS-02: Internationalization
+## 2. Organism MS-02: Internationalization
 
-### Story MS-02.01: Multi-language Support
+### Molecule MS-02.01: Multi-language Support
 **Given** the application supports 4 languages
 **When** a user clicks the language switcher
 **Then**:
@@ -411,20 +411,20 @@ Verify:
 
 ## Testing Workflow for Students
 
-### After Implementing Each Ticket:
+### After Implementing Each Atom:
 1. Run `pnpm dev`
 2. Check console for errors
 3. Test the specific feature implemented
-4. Verify acceptance criteria for that ticket
-5. Mark ticket as complete only if all criteria pass
+4. Verify acceptance criteria for that atom
+5. Mark atom as complete only if all criteria pass
 
-### After Completing Each Story:
-1. Test all tickets in that story together
-2. Verify the story's overall acceptance criteria
-3. Check for integration issues between tickets
+### After Completing Each Molecule:
+1. Test all atoms in that molecule together
+2. Verify the molecule's overall acceptance criteria
+3. Check for integration issues between atoms
 4. Document any issues found
 
-### After Completing Each Epic:
+### After Completing Each Organism:
 1. Full regression test of all previous features
 2. Performance testing
 3. Cross-language testing

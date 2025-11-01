@@ -1,28 +1,29 @@
 # Prompt Template Master Guide
 ## FIFA Atlanta Navigator Project - Educational Workflow
 
-This guide provides a complete workflow for students to use AI assistants (Claude/Gemini) to go from a Product Requirements Document (PRD) to fully implemented code.
+This guide provides a complete workflow for Participants to use AI assistants (Claude/Gemini) to go from a Product Requirements Document (PRD) to fully implemented code.
 
 ---
 
 ## Overview of the Complete Workflow
 
 ```
-Phase 1: Foundation Documents (Students → AI)
-  └─> Generate: spec.md, guardrails.md, acceptance_criteria.md
+Phase 1: Foundation Documents (Participants → AI)
+  └─> Generate: spec.md, guardrails.md, acceptance_criteria.md from PRD
 
-Phase 2: Implementation (Students/AI → AI)
-  └─> Execute: Individual tickets using AI coding assistants
+Phase 2: Implementation (Participants/AI → AI)
+  └─> Execute: Individual spec-driven prompts using AI coding assistants
 
-Phase 3: Milestone Planning (Students → AI)
-  └─> Generate: Epic-level milestones (MS-01, MS-02, etc.)
-      └─> Each Epic contains Stories (MS-01.01, MS-01.02, etc.)
-          └─> Each Story contains Tickets (MS-01.01-A, MS-01.01-B, etc.)
+Phase 3: Milestone Planning (Participants → AI)
+  └─> Generate: Organism-level milestones (MS-01, MS-02, etc.) -- ie Epics
+      └─> Each Organism contains Molecules (MS-01.01, MS-01.02, etc.)
+          └─> Each Molecule contains Atoms (MS-01.01-A, MS-01.01-B, etc.)
+  └─> Deploy to vercel
 ```
 
 ---
 
-## What Students Will Build
+## What Participants Will Build
 
 A Next.js application featuring:
 - **Epic 1 (MS-01)**: Project Setup & Core Features
@@ -31,53 +32,55 @@ A Next.js application featuring:
   - MARTA Bus & Train API integration (with Codespaces proxy solution)
   - Mock FIFA team schedule display
 
-- **Epic 2 (MS-02)**: Internationalization
+- **Epic 2 (MS-03)**: Polish & Animation (if time permits)
+  - Smooth animations for transit vehicles (like Uber cars)
+  - Enhanced UX and visual polish
+
+- **Epic 3 (MS-02)**: Internationalization
   - Multi-language support (English, Spanish, German, Korean)
   - Language switcher UI
   - Translated content across the application
 
-- **Epic 3 (MS-03)**: Polish & Animation (if time permits)
-  - Smooth animations for transit vehicles (like Uber cars)
-  - Enhanced UX and visual polish
 
 ---
 
 ## The Three Phases Explained
 
 ### Phase 1: Foundation Documents
-**Who Does This**: Students
+**Who Does This**: Participants
 **Tool**: AI Assistant (Claude/Gemini)
 **Input**: PRD.md (provided during class)
 **Output**: Technical foundation documents
 
-Students will feed the PRD to an AI assistant using 4 different prompt frameworks:
+Participants will feed the PRD to an AI assistant using 4 different prompt frameworks:
 - **CRAFT**: Generate `spec.md` (technical specification)
 - **DECIDE**: Generate `guardrails.md` (what to do/not do)
 - **MAP**: Generate `acceptance_criteria.md` (how to verify success)
 - **PROMPT**: Generate testing requirements
 
 ### Phase 2: Implementation
-**Who Does This**: AI Coding Assistant (with student guidance)
+**Who Does This**: AI Coding Assistant (with Participant guidance)
 **Tool**: Claude Code / Gemini Code
 **Input**: Individual ticket files from Phase 3
 **Output**: Working code
 
-Students will feed each ticket to an AI coding assistant, which will:
-1. Read the ticket requirements
+Participants will feed each milestone prompt (atom) to an AI coding assistant, which will:
+1. Read the requirements
 2. Implement the code
 3. Test the implementation
 4. Verify acceptance criteria
 
 ### Phase 3: Milestone Planning
-**Who Does This**: Students
+**Who Does This**: Participants
 **Tool**: AI Assistant (Claude/Gemini)
 **Input**: Foundation documents from Phase 1
 **Output**: Hierarchical milestone structure
 
-Students will use AI to break down the project into:
-- **Epics** (MS-01, MS-02): Major feature areas
-- **Stories** (MS-01.01, MS-01.02): Specific features within an epic
-- **Tickets** (MS-01.01-A, MS-01.01-B): Atomic implementation tasks
+To reduce "hallucinations", feature drift, losing context, Participants will use AI to break down the project into:
+- **Organisms** (MS-01, MS-02): Major feature areas. Think Epics
+- **Molecules** (MS-01.01, MS-01.02): Specific features within an Organism (Think Stories)
+- **Atoms** (MS-01.01-A, MS-01.01-B): Atomic implementation tasks
+
 
 ---
 
@@ -94,29 +97,19 @@ docs/
 
 ---
 
-## How to Use This Guide
-
-1. **Instructor**: Present the PRD live during class
-2. **Students**: Follow Phase 1 prompts to generate foundation docs
-3. **Students**: Execute Phase 2 prompts to implement each ticket
-4. **Students**: Use Phase 3 prompts to create milestone structure (documentation)
-5. **Students**: Test and verify the final application
-
----
-
 ## Important Notes
 
 - Phases 1 and 2 happen during class for actual development
 - Phase 3 is for documenting what was built (creating the milestone structure)
 - The AI assistant is a tool, not a replacement for understanding
-- Students should review and understand all generated documents
-- The hierarchical structure (Epic → Story → Ticket) is critical for organization
+- Participants should review and understand all generated documents
+- The Atomic/hierarchical structure (Organism → Molecule → Atomic) is critical for organization
 
 ---
 
 ## Learning Objectives
 
-By completing this workflow, students will learn:
+By completing this workflow, Participants will learn:
 1. How to work effectively with AI coding assistants
 2. How to structure complex projects into manageable tasks
 3. Modern web development with Next.js, TypeScript, and APIs

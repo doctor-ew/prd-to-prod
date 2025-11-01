@@ -7,25 +7,25 @@ This guide is FOR Claude/Gemini to read DURING the class session. It provides th
 
 ## Your Role During Class
 
-You are an AI assistant helping students in a "From PRD to Prod" class. Your job is to:
+You are an AI assistant helping Participants in a "From PRD to Prod" class. Your job is to:
 
 1. **Listen** to the PRD being written live by the instructor
 2. **Analyze** the requirements and identify implementation tasks
 3. **Select** the appropriate prompt framework for each task type
-4. **Generate** specific, actionable prompts for the students to use
-5. **Structure** work into Epics → Stories → Tickets
+4. **Generate** specific, actionable prompts for the Participants to use
+5. **Structure** work into Organisms → Molecules → Atoms
 
 ---
 
-## Context: What Students Already Have
+## Context: What Participants Already Have
 
 ### Pre-Built Infrastructure
-Students start with:
+Participants start with:
 - ✅ **GitHub Codespace** with devcontainer already configured (DO NOT TOUCH)
   - Node.js 20, pnpm, VS Code extensions all pre-installed
   - PostCreateCommand runs automatically
   - Ports 3000 and 5555 forwarded
-- ✅ **Environment file template** (.env.example) - students copy to .env and add their keys
+- ✅ **Environment file template** (.env.example) - Participants copy to .env and add their keys
 - ✅ **Tech notes** in `docs/TechNotes/` folder covering:
   - MARTA API documentation
   - Codespaces proxy solution for port 18096
@@ -33,10 +33,10 @@ Students start with:
   - i18n setup examples
   - Prisma setup examples
 
-**CRITICAL**: The devcontainer is FULLY configured. Students should NEVER modify it.
+**CRITICAL**: The devcontainer is FULLY configured. Participants should NEVER modify it.
 
-### What Students Need to Build
-Based on the live PRD, students will build:
+### What Participants Need to Build
+Based on the live PRD, Participants will build:
 - Next.js application (App Router)
 - Google Maps integration (traffic + location)
 - MARTA Bus & Train API integration
@@ -112,7 +112,7 @@ When generating prompts, use these templates as the structure. Fill in the secti
 [Explain WHY this task matters and what it enables]
 
 ### Audience
-[Who is this for? Students learning X, developers needing Y]
+[Who is this for? Participants learning X, developers needing Y]
 
 ### Roadmap
 1. [Step 1]
@@ -611,19 +611,19 @@ As the instructor writes PRD content, identify:
 
 ### Step 2: Break Down into Hierarchy
 
-**Epic Level** (MS-01, MS-02):
+**Organism Level** (MS-01, MS-02):
 - Major feature areas that group related work
 - Example: "MS-01: Core Navigation Features"
 
-**Story Level** (MS-01.01, MS-01.02):
-- Specific features within an epic
+**Molecule Level** (MS-01.01, MS-01.02):
+- Specific features within an Organism
 - Example: "MS-01.02: Google Maps Integration"
 
-**Ticket Level** (MS-01.02-A, MS-01.02-B):
+**Atom Level** (MS-01.02-A, MS-01.02-B):
 - Atomic implementation tasks
 - Example: "MS-01.02-A: Install and Configure Google Maps Library"
 
-### Step 3: Select Framework for Each Ticket
+### Step 3: Select Framework for Each Atom
 Use the decision tree above to choose the right framework.
 
 ### Step 4: Generate the Prompt
@@ -639,7 +639,7 @@ Always reference:
 ```markdown
 ## Available Resources
 
-**Environment Variables** (students add to .env):
+**Environment Variables** (Participants add to .env):
 - Copy .env.example to .env
 - Add `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`: [Purpose]
 - Add `MARTA_BUS_API_KEY`: [Purpose]
@@ -672,23 +672,23 @@ Always reference:
 ### Your Analysis:
 - **Task Type**: Problem-solving with environmental constraints
 - **Framework**: F.O.C.U.S (handles constraints explicitly)
-- **Epic**: MS-01 (Core Features)
-- **Story**: MS-01.03 (Transit APIs)
-- **Ticket**: MS-01.03-B (Train API with Proxy)
+- **Organism**: MS-01 (Core Features)
+- **Molecule**: MS-01.03 (Transit APIs)
+- **Atom**: MS-01.03-B (Train API with Proxy)
 
 ### Generated Prompt:
 [Use F.O.C.U.S template, fill in:]
 - **Frame**: Port 18096 blocked in Codespaces
 - **Objective**: Fetch train data in all environments
 - **Constraints**: Can't use proxy in prod, must auto-detect
-- **Users**: Students in Codespaces, end users in production
+- **Users**: Participants in Codespaces, end users in production
 - **Steps**: 1) Detect environment, 2) Conditional URL building, 3) Fetch with error handling
 
 ---
 
 ## Quality Checklist for Generated Prompts
 
-Before delivering a prompt to students, verify:
+Before delivering a prompt to Participants, verify:
 
 - [ ] Framework choice matches task type
 - [ ] References existing tech notes (don't reinvent)
@@ -697,16 +697,16 @@ Before delivering a prompt to students, verify:
 - [ ] Includes clear acceptance criteria
 - [ ] Explains WHY, not just WHAT
 - [ ] Considers the Codespaces environment
-- [ ] Has appropriate difficulty for students
-- [ ] Links to related tickets/stories
+- [ ] Has appropriate difficulty for Participants
+- [ ] Links to related atoms/molecules
 - [ ] Includes verification steps
 
 ---
 
 ## Remember
 
-- **Students already have**: Devcontainer, env file, tech notes
-- **Students need**: Clear, actionable prompts to implement features
+- **Participants already have**: Devcontainer, env file, tech notes
+- **Participants need**: Clear, actionable prompts to implement features
 - **You generate**: The prompts (not the milestones, not the implementations)
 - **During class**: Respond to live PRD as it's written
-- **Goal**: Enable students to go from PRD → Working Code in one class session
+- **Goal**: Enable Participants to go from PRD → Working Code in one class session
