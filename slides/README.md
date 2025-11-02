@@ -2,6 +2,22 @@
 
 Comprehensive slide deck for teaching Spec-Driven Development with AI assistants.
 
+## 📊 Two Versions Available
+
+**FULL Version** (`slides.md`) - 46 slides
+- Comprehensive 3-hour workshop
+- All 8 frameworks detailed
+- Complete environment setup
+- In-depth atomic design visuals
+
+**SLIM Version** (`slides-slim.md`) - 36 slides
+- Focused 2-hour presentation
+- Core concepts and essential frameworks
+- Streamlined for faster delivery
+- All vibe coding context retained
+
+See `SLIM-VERSION.md` for detailed comparison.
+
 ## 🎯 Workshop Overview
 
 This workshop contrasts **Vibe Coding** with **Spec-Driven Development**, showing students how to transform Product Requirements Documents into production-ready code using structured AI-assisted frameworks.
@@ -74,17 +90,20 @@ This workshop contrasts **Vibe Coding** with **Spec-Driven Development**, showin
 ### With Slidev (Recommended)
 
 ```bash
-# Install Slidev globally
-npm i -g @slidev/cli
-
 # Navigate to slides directory
 cd /Users/drew.schillinger/shuttlebay/DoctorEw/prd-to-prod/slides
 
-# Run slides
-slidev slides.md
+# Run FULL version (46 slides)
+npx @slidev/cli slides.md
 
-# Export to PDF
-slidev export slides.md --output workshop.pdf
+# Run SLIM version (36 slides)
+npx @slidev/cli slides-slim.md
+
+# Export FULL version to PDF
+npx @slidev/cli export slides.md --output prd-to-prod-FULL.pdf
+
+# Export SLIM version to PDF
+npx @slidev/cli export slides-slim.md --output prd-to-prod-SLIM.pdf
 ```
 
 ### Slide Sections Reference

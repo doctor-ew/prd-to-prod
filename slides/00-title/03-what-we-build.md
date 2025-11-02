@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: https://doctorew.com/shuttlebay/YC/Screen-Capture-2025-11-01-22-15-14.png
+image: https://doctorew.com/shuttlebay/YC/pb-PelzJtI2kH.png
 backgroundSize: contain
 ---
 
