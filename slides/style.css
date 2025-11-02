@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --slidev-fonts-sans: 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+  --slidev-fonts-mono: 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+}
+
+* {
+  font-family: var(--slidev-fonts-sans) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--slidev-fonts-sans) !important;
+  font-weight: 600;
+}
+
+code, pre {
+  font-family: var(--slidev-fonts-mono) !important;
+}
+
+.slidev-layout p {
+  font-family: var(--slidev-fonts-sans) !important;
+}
+
+/* Global background for all slides */
+.slidev-layout {
+  background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1920&h=1080&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Add subtle overlay to entire slide for better text contrast */
+.slidev-layout::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(51, 51, 51, 0.70) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure slide content stays above overlay */
+.slidev-layout > * {
+  position: relative;
+  z-index: 1;
+}
