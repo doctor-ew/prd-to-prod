@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm dlx @slidev/cli build slides-slim.md",
+  "outputDirectory": "dist",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "devCommand": "pnpm run dev"
+}

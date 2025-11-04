@@ -1,0 +1,78 @@
+name: Deploy to Vercel (Demo Branch)
+
+on:
+  push:
+    branches:
+      - demo
+  workflow_dispatch:
+
+jobs:
+  deploy-fifa-demo:
+    name: Deploy FIFA Traffic Demo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: 'fifa-traffic-demo/pnpm-lock.yaml'
+
+      - name: Install dependencies
+        working-directory: ./fifa-traffic-demo
+        run: pnpm install
+
+      - name: Deploy to Vercel (Production)
+        working-directory: ./fifa-traffic-demo
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_FIFA_PROJECT_ID }}
+        run: |
+          pnpm add -g vercel
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+
+  deploy-slides:
+    name: Deploy Slides
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: 'slides/pnpm-lock.yaml'
+
+      - name: Install dependencies
+        working-directory: ./slides
+        run: pnpm install
+
+      - name: Deploy to Vercel (Production)
+        working-directory: ./slides
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_SLIDES_PROJECT_ID }}
+        run: |
+          pnpm add -g vercel
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN

@@ -99,9 +99,18 @@ For each atom:
 
 **5. Deploy to Production**
 ```bash
+# Option 1: Auto-deploy via GitHub Actions (push to demo branch)
+git push origin demo
+
+# Option 2: Manual deploy via pnpm script
 cd fifa-traffic-demo
-vercel --prod
+pnpm run deploy
+
+# Option 3: Vercel CLI directly
+pnpm dlx vercel --prod
 ```
+
+See `DEPLOY.md` for full deployment guide and `.github/SETUP-GITHUB-ACTIONS.md` for CI/CD setup.
 
 ## Why This Matters
 
