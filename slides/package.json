@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
+    "dev:slim": "slidev slides-slim.md --open",
     "build": "slidev build",
+    "build:slim": "slidev build slides-slim.md",
     "export": "slidev export",
     "export-notes": "slidev export-notes",
     "preview": "slidev preview"
