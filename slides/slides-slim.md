@@ -54,7 +54,11 @@ src: ./01-vibe-coding/03-when-vibe-works.md
 ---
 
 ---
-src: ./01-vibe-coding/04-trust-warning.md
+src: ./01-vibe-coding/04-ai-responsibility.md
+---
+
+---
+src: ./01-vibe-coding/05-trust-warning.md
 ---
 
 ---

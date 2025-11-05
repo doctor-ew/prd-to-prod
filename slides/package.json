@@ -8,12 +8,9 @@
     "dev:slim": "slidev slides-slim.md --open",
     "build": "slidev build",
     "build:slim": "slidev build slides-slim.md",
-    "export": "slidev export slides.md --output prd-to-prod-FULL.pdf",
-    "export:slim": "slidev export slides-slim.md --output prd-to-prod-SLIM.pdf",
+    "export": "slidev export",
     "export-notes": "slidev export-notes",
-    "preview": "slidev preview",
-    "deploy": "vercel --prod --yes",
-    "deploy:preview": "vercel --yes"
+    "preview": "slidev preview"
   },
   "dependencies": {
     "@slidev/cli": "52.6.0",
