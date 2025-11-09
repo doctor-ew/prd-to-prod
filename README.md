@@ -1,6 +1,6 @@
 # From PRD to Prod: Spec-Driven Development Workshop
 
-Learn to build production-ready applications using AI assistants with intentional, spec-driven methodology.
+Learn to build production-ready applications using AI assistants with intentional, spec-driven methodology
 
 ## What's Inside
 

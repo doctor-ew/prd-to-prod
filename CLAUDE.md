@@ -40,13 +40,9 @@ The `postCreate.sh` script automatically:
 - Conditionally installs OpenAI Codex if `OPENAI_API_KEY` is present
 - Skips automatic dependency installation for faster boot (run `pnpm install` manually)
 
-## Working with the FIFA Traffic Demo
+## Common Commands
 
-### Location
-
-All demo application code is in `fifa-traffic-demo/` subdirectory.
-
-### Common Commands
+### FIFA Traffic Demo (Main Application)
 
 ```bash
 # Navigate to demo app
@@ -67,6 +63,62 @@ pnpm start
 # Lint code
 pnpm lint
 ```
+
+### Workshop Slides
+
+```bash
+# Navigate to slides directory
+cd slides
+
+# Run main slide deck (46 slides)
+pnpm dev
+
+# Run slim version
+pnpm dev:slim
+
+# Build for production
+pnpm build
+
+# Export slides to PDF
+pnpm export
+
+# Export speaker notes
+pnpm export-notes
+```
+
+All slide commands use Slidev (`@slidev/cli`), which auto-opens the presentation in your browser.
+
+## Working with Workshop Slides
+
+The `slides/` directory contains a 46-slide Slidev presentation teaching the methodology.
+
+### Slide Structure
+
+```
+slides/
+├── slides.md                 # Main presentation entry point
+├── slides-slim.md           # Condensed version
+├── 00-title/               # Intro, agenda, what we build
+├── 01-vibe-coding/         # Context: when AI coding goes wrong
+├── 02-spec-driven/         # Core methodology introduction
+├── 03-pipeline/            # PRD → Spec → Guardrails → AC flow
+├── 04-atomic-design/       # Organisms → Molecules → Atoms
+├── 05-environment/         # DevContainer, API keys, setup
+├── 06-framework/           # 8 prompt frameworks (S.P.A.R.K, etc.)
+├── 07-guardrails-ac/       # Constraints and verification
+├── 08-milestones/          # Progress tracking and reflection
+└── 09-wrap-up/             # Takeaways, next steps
+```
+
+### Slide Editing Guidelines
+
+- Each directory contains modular markdown files
+- `slides.md` imports sections via glob patterns
+- Use Slidev syntax: `---` for slide breaks, `:::{class}` for styling
+- Preview changes instantly with hot reload (`pnpm dev`)
+- Screenshots stored in `slides/` root with `SCREENSHOT-SETUP.md` instructions
+
+## FIFA Traffic Demo: Technical Details
 
 ### Tech Stack
 
@@ -179,6 +231,16 @@ The `docs/PromptTemplates/00-META-FRAMEWORK-GUIDE.md` provides decision logic fo
 
 See `docs/PromptTemplates/00-MASTER-GUIDE.md` for complete workflow.
 
+### Quick-Start Prompt Files (Phase 1)
+
+For rapid Phase 1 document generation, use the numbered prompt files:
+- `docs/PromptTemplates/1-generate-spec-prompt.MD` - Technical specification
+- `docs/PromptTemplates/2-generate-guardrails-prompt.MD` - Constraints and rules
+- `docs/PromptTemplates/3-generate-acceptance-criteria.MD` - Verification checklist
+- `docs/PromptTemplates/4-generate-test-criteria.MD` - Testing requirements
+
+These are streamlined versions of the full Phase 1 framework prompts.
+
 ## Deployment
 
 ### Vercel Deployment
@@ -198,6 +260,32 @@ vercel --prod
 
 The `vercel.json` configuration is pre-configured for Next.js deployment.
 
+## Repository Structure
+
+This is a **dual-purpose repository**:
+1. **Educational Materials** - Workshop slides, prompt templates, and teaching guides (main branch)
+2. **Demo Application** - Working FIFA Navigator app demonstrating the methodology
+
+### Key Directories
+
+```
+prd-to-prod/
+├── slides/                       # 46-slide Slidev presentation
+│   ├── 00-title/ through 09-wrap-up/
+│   └── package.json             # Slidev dependencies
+├── docs/
+│   ├── PromptTemplates/         # Phase 1-3 workflow guides + 8 frameworks
+│   ├── ForCode/                 # Implementation milestones (Organisms → Atoms)
+│   └── FromProd/                # Historical context (PRD, tech notes, setup)
+├── fifa-traffic-demo/           # Next.js demo app
+│   └── src/
+│       ├── app/[lang]/          # Internationalized routes
+│       ├── components/          # React components
+│       ├── lib/                 # Utilities (codespaces.ts, i18n.ts, etc.)
+│       └── types/               # TypeScript definitions
+└── .devcontainer/               # Pre-configured environment (DO NOT MODIFY)
+```
+
 ## Important Constraints
 
 1. **DO NOT modify DevContainer files** unless explicitly requested
@@ -205,6 +293,7 @@ The `vercel.json` configuration is pre-configured for Next.js deployment.
 3. **Multi-language support required** - all user-facing strings must use i18n
 4. **App Router only** - do not use Pages Router patterns
 5. **Environment detection matters** - code must work in both Codespaces and production
+6. **Educational repository** - When working on slides or docs, maintain instructional clarity
 
 ## Common Pitfalls
 
