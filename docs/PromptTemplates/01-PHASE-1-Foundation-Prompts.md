@@ -8,14 +8,21 @@ These prompts use 4 different AI prompting frameworks from the prompt_framework.
 ## Input Required
 
 Before using these prompts, you need:
-- ✅ **PRD.md** (Product Requirements Document) - provided by instructor during class
+- ✅ **PRD.md** (Product Requirements Document) - in FromProd folder. provided by instructor during class
+- run the /init command to initialize the AI coding assistant in the existing environment
+  - this generates a CLAUDE.MD file. 
+    - Common development commands (e.g., build, lint, test, run single tests). 
+    - High-level project architecture and structure (e.g., key files, modules, big-picture overview). 
+    - Code style guidelines, usage notes, and other context-specific details to onboard future Claude sessions quickly.
 
+    - best practices
+      - Run /init the first time you use Claude Code in a project, or after major changes to refresh the context.
 ---
 
-## Prompt 1: Generate Technical Specification (CRAFT Framework)
+## Prompt 1: Generate Technical Specification (CRAFT Framework) (spec.md)
 
 ### Instructions for Students
-Copy this prompt and send it to Claude or Gemini, along with the PRD.md content:
+to generate spec.md from PRD.md, Copy this prompt and send it to Claude or Gemini, along with the PRD.md content:
 
 ```
 I need you to use the CRAFT framework to generate a detailed technical specification document for the Atlanta FIFA Navigator project.
@@ -71,7 +78,7 @@ Here is the PRD:
 
 ### Expected Output
 A complete technical specification document that developers and AI assistants can reference during implementation.
-
+/fifa-traffic-demo/spec.md
 ---
 
 ## Prompt 2: Generate Guardrails (DECIDE Framework)
@@ -356,7 +363,7 @@ Expected:
 - Returns empty arrays on error (not 500 status)
 
 **GET /api/events**
-```bash
+```bash 
 curl http://localhost:3000/api/events
 ```
 Expected:
